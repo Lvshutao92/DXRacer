@@ -1,0 +1,110 @@
+//
+//  PrefixHeader.pch
+//  DXRacer
+//
+//  Created by ilovedxracer on 2017/6/14.
+//  Copyright © 2017年 ilovedxracer. All rights reserved.
+//
+
+#ifndef PrefixHeader_pch
+#define PrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import <AFNetworking/AFNetworking.h>
+#import <UIImageView+WebCache.h>
+#import <MBProgressHUD/MBProgressHUD.h>
+#import <MJRefresh/MJRefresh.h>
+#import <MJExtension/MJExtension.h>
+#import <FMDB/FMDB.h>
+#import <Masonry/Masonry.h>
+#import <IQKeyboardManager/IQKeyboardManager.h>
+#import <XYQRegexPattern/XYQRegexPatternHelper.h>
+
+
+
+
+#import "UITableViewRowAction+JZExtension.h"
+#import "Manager.h"
+#import "LoginViewController.h"
+#import "HomePageViewController.h"
+#import "ShoppingCartViewController.h"
+#import "MineViewController.h"
+#import "MessageTableViewController.h"
+
+#import "FinalTableViewController.h"
+
+
+
+
+
+//判断 iOS 8 或更高的系统版本
+#define IOS_VERSION_8_OR_LATER (([[[UIDevice currentDevice] systemVersion] floatValue] >=8.0)? (YES):(NO))
+//获取当前语言
+#define LRCurrentLanguage ([[NSLocale preferredLanguages] objectAtIndex:0])
+//由角度转换弧度 由弧度转换角度
+#define LRDegreesToRadian(x) (M_PI * (x) / 180.0)
+#define LRRadianToDegrees(radian) (radian*180.0)/(M_PI)
+//设置 view 圆角和边框
+#define LRViewBorderRadius(View, Radius, Width, Color)\
+\
+[View.layer setCornerRadius:(Radius)];\
+[View.layer setMasksToBounds:YES];\
+[View.layer setBorderWidth:(Width)];\
+[View.layer setBorderColor:[Color CGColor]]
+
+//弱引用/强引用
+#define LRWeakSelf(type)  __weak typeof(type) weak##type = type;
+#define LRStrongSelf(type)  __strong typeof(type) type = weak##type;
+//获取屏幕 宽度、高度
+#define SCREEN_WIDTH ([UIScreen mainScreen].bounds.size.width)
+#define SCREEN_HEIGHT ([UIScreen mainScreen].bounds.size.height)
+//以iPhone6为基础
+#define SCALE_WIDTH SCREEN_WIDTH/375
+#define SCALE_HEIGHT SCREEN_HEIGHT/667
+//获取系统版本
+#define IOS_VERSION ［[UIDevice currentDevice] systemVersion] floatValue]
+#define CurrentSystemVersion ［UIDevice currentDevice] systemVersion]
+//rgb alpha颜色
+#define RGBACOLOR(r,g,b,a) [UIColor colorWithRed:(r)/255.0 green:(g)/255.0 blue:(b)/255.0 alpha:(a)]
+//获取当前语言
+#define CurrentLanguage (［NSLocale preferredLanguages] objectAtIndex:0])
+//判断设备的操做系统ios8.0
+#define IOS8 (［[UIDevice currentDevice].systemVersion doubleValue] >= 8.0]
+//根视图
+#define KWINDOW_ROOT [[[UIApplication sharedApplication] delegate] window].rootViewController
+//屏幕大小
+#define kScreenBounds [UIScreen mainScreen].bounds
+
+
+//#define NSString(str) [NSString stringWithFormat:@"http://106.14.249.13:8888/image/dxracerFTP/%@",str]
+//#define CHECKWORD @"30e865d444ea47b58380b892e558484a"
+//#define KURLNSString(str1,str2) [NSString stringWithFormat:@"http://10.0.0.20:8080/dxracer-gateway-web/app/%@/%@",str1,str2]
+
+
+#define NSString(str) [NSString stringWithFormat:@"http://106.15.37.105:8888/product/%@",str]
+#define CHECKWORD @"30e865d444ea47b58380b892e558484a"
+#define KURLNSString(str1,str2) [NSString stringWithFormat:@"https://dms.dxracer.com.cn/app/%@/%@",str1,str2]
+
+
+
+
+
+#define NSLog(FORMAT, ...) fprintf(stderr, "%s:%zd\t%s\n", [[[NSString stringWithUTF8String: __FILE__] lastPathComponent] UTF8String], __LINE__, [[NSString stringWithFormat: FORMAT, ## __VA_ARGS__] UTF8String]);
+
+#else
+
+#define NSLog(FORMAT, ...) nil
+
+
+
+#endif /* PrefixHeader_pch */
+
+
+
+
+
+
+
+
