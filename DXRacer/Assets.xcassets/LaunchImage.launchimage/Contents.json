@@ -3,6 +3,15 @@
     {
       "extent" : "full-screen",
       "idiom" : "iphone",
+      "subtype" : "2436h",
+      "filename" : "1DA1C7AB51FEBE8A7895A3F5772A0C2D.png",
+      "minimum-system-version" : "11.0",
+      "orientation" : "portrait",
+      "scale" : "3x"
+    },
+    {
+      "extent" : "full-screen",
+      "idiom" : "iphone",
       "subtype" : "736h",
       "filename" : "启动页1242x2208(2).png",
       "minimum-system-version" : "8.0",
